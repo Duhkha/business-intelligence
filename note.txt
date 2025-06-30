@@ -1,0 +1,44 @@
+
+psql "postgresql://neondb_owner:npg_v8xnLmK4TAXs@ep-dark-fog-a2lrumb2-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require"
+
+
+
+
+python -m venv .venv
+.venv\Scripts\Activate.ps1          # (mac/linux: source .venv/bin/activate)
+
+pip install pandas sqlalchemy psycopg2-binary jinja2 python-dotenv
+
+
+
+PS C:\projects\bi> psql "postgresql://neondb_owner:npg_v8xnLmK4TAXs@ep-dark-fog-a2lrumb2-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require" --file="sql/star_schema.sql"
+psql (16.8, server 15.13)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off)
+Type "help" for help.
+
+neondb=> \i sql/star_schema.sql
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+neondb=> \dt
+              List of relations
+ Schema |     Name     | Type  |    Owner
+--------+--------------+-------+--------------
+ public | dim_customer | table | neondb_owner
+ public | dim_date     | table | neondb_owner
+ public | dim_invoice  | table | neondb_owner
+ public | dim_product  | table | neondb_owner
+ public | fct_sales    | table | neondb_owner
+(5 rows)
+
+
+
