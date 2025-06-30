@@ -1,3 +1,4 @@
+```
 bi-ecommerce/
 │
 ├─ data/                        
@@ -9,3 +10,4 @@ bi-ecommerce/
 ├─ docs/
 │   └─ presentation.pptx        ← 10-slide deck
 └─ README.md
+```
